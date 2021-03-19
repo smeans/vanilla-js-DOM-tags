@@ -5,8 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Array.prototype.forEach.call(ingredients.children, (tr) => {
         console.log(tr);
-        let td = tr.children[1];
-        let weight = td.nodeValue;
-        console.log(td, weight);
+
+        if (tr.id == 'totals') {
+            console.log(total);
+        } else {
+            let td = tr.children[1];
+            let weight = parseFloat(td.innerText);
+            console.log(td, weight);
+
+            total += weight;
+        }
     });
 });
