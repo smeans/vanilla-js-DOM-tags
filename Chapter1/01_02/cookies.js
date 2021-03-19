@@ -1,3 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    alert('Hello, cookies!');
+    const ingredients = document.getElementById('ingredients');
+
+    ingredients.childNodes.forEach((tr) => {
+        console.log(tr);
+    });
 });
