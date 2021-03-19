@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.forms.queryall.addEventListener('submit', (e) => {
+        e.preventDefault();
+
         refreshQuery(e.target.selector.value);
+
+        return false;
     })
 
     refreshOutput(textarea.value);
