@@ -31,6 +31,9 @@ function refreshQuery(selector) {
     matches.innerHTML = '';
 
     output.querySelectorAll(selector).forEach((el) => {
-        console.log(el.outerHTML);
+        const li = document.createElement('li');
+        li.innerText = el.outerHTML;
+
+        matches.appendChild(li);
     });
 }
