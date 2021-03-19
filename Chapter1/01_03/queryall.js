@@ -25,5 +25,12 @@ function refreshOutput(html) {
 }
 
 function refreshQuery(selector) {
-    console.log(selector);
+    const output = document.querySelector('#output');
+    const matches = document.querySelector('#matches');
+
+    matches.innerHTML = '';
+
+    output.querySelectorAll(selector).forEach((el) => {
+        console.log(el.outerHTML);
+    });
 }
