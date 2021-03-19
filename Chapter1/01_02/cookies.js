@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.prototype.forEach.call(ingredients.children, (tr) => {
         console.log(tr);
 
-        if (tr.id == 'totals') {
-            console.log(total);
+        if ('id' in tr.attributes
+                && tr.attributes['id'].nodeValue == 'totals') {
+            tr.children[1].innerText = total;
         } else {
             let td = tr.children[1];
             let weight = parseFloat(td.innerText);
