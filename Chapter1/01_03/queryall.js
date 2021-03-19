@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
         refreshOutput(e.target.value);
     });
 
+    document.forms.queryall.addEventListener('submit', (e) => {
+        refreshQuery(e.target.selector.value);
+    })
+
     refreshOutput(textarea.value);
 });
 
@@ -14,4 +18,8 @@ function refreshOutput(html) {
     const output = document.querySelector('#output');
 
     output.innerHTML = html;
+}
+
+function refreshQuery(selector) {
+    console.log(selector);
 }
